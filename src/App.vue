@@ -1,6 +1,7 @@
 <template>
   <div class="page">
     <div class="noise"></div>
+    <ScrollParticleField />
     <div class="scroll-progress" :style="{ transform: `scaleX(${scrollProgress})` }"></div>
 
     <header class="topbar glass" :class="{ compact: scrollY > 40 }">
@@ -81,6 +82,30 @@
       </div>
     </section>
 
+
+
+    <section class="section flow-section reveal" data-delay="20">
+      <p class="section-kicker">Scroll Cards</p>
+      <h2>下拉时卡片分层推进，模拟原站叙事卡片节奏</h2>
+      <div class="flow-wrap">
+        <article class="flow-card fc1">
+          <span>01</span>
+          <h3>Signal intake</h3>
+          <p>Scanner findings stream into Maze where context enrichment starts instantly.</p>
+        </article>
+        <article class="flow-card fc2">
+          <span>02</span>
+          <h3>Agentic investigation</h3>
+          <p>Graph-based reasoning verifies exploitability and suppresses false positives.</p>
+        </article>
+        <article class="flow-card fc3">
+          <span>03</span>
+          <h3>Guided remediation</h3>
+          <p>One-click actions trigger WAF, tickets, PRs and owner notifications.</p>
+        </article>
+      </div>
+    </section>
+
     <section id="resources" class="section timeline reveal story-block" data-delay="40">
       <p class="section-kicker">Narrative Scroll</p>
       <h2>Three-step operating rhythm</h2>
@@ -113,6 +138,7 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
 import ParticleGlobe from './components/ParticleGlobe.vue'
+import ScrollParticleField from './components/ScrollParticleField.vue'
 
 const scrollY = ref(0)
 const scrollProgress = ref(0)
